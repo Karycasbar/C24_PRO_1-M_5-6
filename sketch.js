@@ -7,6 +7,7 @@ const Body = Matter.Body;
 
 var btn1;
 var ground2;
+var angle = 60;
 function setup() {
   createCanvas(400,400);
 
@@ -57,6 +58,14 @@ fill("blue");
   rect(ground.position.x,ground.position.y,500,20);
  
 console.log(ground.position.y);
+
+Matter.Body.rotate(ground2,angle);
+push();
+translate(ground2.position.x, ground2.position.y);
+rotate(angle);
+rect(0, 0, 100, 20);
+pop();
+angle = angle + 0.1;
 
   
   
